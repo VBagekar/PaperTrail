@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EduVision - Upload Notes</title>
+    <link rel="stylesheet" href="upload.css" />
+  </head>
+  <body>
+    <header>
+      <h1>EduVision</h1>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="#">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="upload-section">
+        <h2>Upload Your Notes</h2>
+        <form id="uploadForm" onsubmit="return false;">
+          <div
+            class="upload-box"
+            onclick="document.getElementById('fileInput').click()"
+          >
+            <input
+              type="file"
+              id="fileInput"
+              accept=".pdf, .doc, .docx, .jpg, .jpeg, .png"
+              hidden
+            />
+            <p>Drag & drop your file here, or click to select a file</p>
+            <p class="formats">Supported formats: PDF, Word, Images</p>
+            <div class="icons">
+              <span>📄 PDF</span>
+              <span>📝 Word</span>
+              <span>🖼️ Images</span>
+            </div>
+            <p id="fileName" style="color: green; font-weight: bold"></p>
+          </div>
+          <p id="error-message" style="color: red"></p>
+          <button type="submit" class="upload-button" onclick="handleUpload()">
+            Upload
+          </button>
+        </form>
+      </section>
+
+      <section class="uploaded-content">
+        <h2>Uploaded Content</h2>
+        <div class="content-box">
+          <p id="no-content-message">No content uploaded yet</p>
+          <ul id="important-notes-list">
+            <!-- Important notes will appear here as bullet points after the file is uploaded -->
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 EduVision. All rights reserved.</p>
+    </footer>
+    <script src="upload.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+  </body>
+</html>
